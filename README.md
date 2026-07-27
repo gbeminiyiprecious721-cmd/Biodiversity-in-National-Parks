@@ -69,7 +69,6 @@ Suggested visuals for this project include:
 
 If chart images are exported from the notebook or script, they can be added to a repository folder such as `images/` and displayed like this:
 
-```markdown
 ![Top 10 Most Observed Species](images/top_10_species.png)
 ![Protection Rate by Category](images/protection_rate_by_category.png)
 ## Interpretation: Top 10 Most Observed Species
@@ -104,7 +103,9 @@ The top-10 most observed species chart highlights which species dominate total o
 - Matplotlib
 - Seaborn
 - SciPy
-Setup
+
+## Setup
+
 Requirements
 Python 3.8 or higher
 Jupyter Notebook or another Python environment
