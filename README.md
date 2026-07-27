@@ -6,6 +6,12 @@ This project analyzes biodiversity data from the National Park Service to explor
 
 > **Note:** This dataset is inspired by real data but is largely fictional, so results should be interpreted as an educational analysis rather than a reflection of current ecological conditions.
 
+## What Problem This Solves
+
+National parks track thousands of species, but raw biodiversity records can be difficult to interpret quickly. This project turns species and observation data into a clearer conservation overview by answering which species groups appear most at risk, which groups are most frequently observed, and whether conservation status is meaningfully associated with species category.
+
+The goal is to help reviewers, analysts, and conservation-focused stakeholders understand biodiversity patterns faster through summary statistics, visualizations, and statistical testing.
+
 ## Project Goals
 
 This project answers the following questions:
@@ -23,6 +29,23 @@ The analysis uses two CSV files:
 - `species_info.csv`: species-level information, including category, scientific name, common names, and conservation status.
 - `observations.csv`: species observation counts across National Park Service parks.
 
+## Example Workflow
+
+The analysis follows a simple end-to-end data workflow:
+
+1. **Input:** Load species records from `species_info.csv` and park observation records from `observations.csv`.
+2. **Cleaning:** Replace missing conservation statuses with `No Intervention` and prepare category-level groupings.
+3. **Processing:** Calculate conservation status counts, protection rates, endangered rates, and total observations by species.
+4. **Statistical Testing:** Use a chi-square test to check whether species category and conservation status are associated.
+5. **Result:** Generate charts and summary findings that show which species categories are most protected, most endangered, and most commonly observed.
+
+Example output questions:
+
+- Which species category has the highest protection rate?
+- Which category has the highest endangered rate?
+- What is the most observed species overall?
+- How is the most observed species distributed across parks?
+
 ## Analysis Overview
 
 The project includes:
@@ -34,6 +57,21 @@ The project includes:
 - Identifying the most frequently observed species.
 - Visualizing the distribution of the most observed species across national parks.
 
+## Visuals and Sample Outputs
+
+Suggested visuals for this project include:
+
+- Conservation status distribution chart.
+- Protection rate by species category.
+- Endangered rate by species category.
+- Top 10 most observed species.
+- Park-level distribution for the most observed species.
+
+If chart images are exported from the notebook or script, they can be added to a repository folder such as `images/` and displayed like this:
+
+```markdown
+![Top 10 Most Observed Species](images/top_10_species.png)
+![Protection Rate by Category](images/protection_rate_by_category.png)
 ## Interpretation: Top 10 Most Observed Species
 
 The top-10 most observed species chart highlights which species dominate total observations across the parks. This is useful for identifying common species in monitoring records and comparing the visibility of common species against protected or endangered species in the dataset.
@@ -66,6 +104,29 @@ The top-10 most observed species chart highlights which species dominate total o
 - Matplotlib
 - Seaborn
 - SciPy
+Setup
+Requirements
+Python 3.8 or higher
+Jupyter Notebook or another Python environment
+pandas
+NumPy
+Matplotlib
+Seaborn
+SciPy
+
+## Installation
+
+Clone the repository:
+
+git clone <repository-url>
+cd <repository-folder>
+
+Install dependencies:
+pip install pandas numpy matplotlib seaborn scipy jupyter
+Add the dataset files to the project directory:
+
+species_info.csv
+observations.csv
 
 ## How to Run
 
